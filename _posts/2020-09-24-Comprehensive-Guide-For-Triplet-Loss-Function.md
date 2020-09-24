@@ -50,7 +50,7 @@ Then let's create two instances of that model, and pass the two corresponding em
 
 
 
-![siamese network](/images/siamese.png "siamese network")
+![siamese network](../images/siamese.png "siamese network")
 
 
 
@@ -90,19 +90,19 @@ That's from where the name "triplets" came. Then, we need to minimize the distan
 
 
 
-![derivation without margin](/images/derivation-without-margin.PNG "derivation without margin")
+![derivation without margin](../images/derivation-without-margin.PNG "derivation without margin")
 
 
 
 The previous inequality is satisfied when the d(A,N) is bigger than the d(A,P). However, there is a trivial solution that also satisfies the equation, which is both the distances are equal to zero. To prevent the trained model from this trivial solution, a new parameter called "margin" is introduced, so that the new derivation would be like: 
 
-![derivation with margin](/images/derivation-with-margin.PNG "derivation with margin")
+![derivation with margin](../images/derivation-with-margin.PNG "derivation with margin")
 
 To formulate this requirement into a function, the hinge function is used. The hinge function assure that if the triplets already follow our requirements, then no loss (zero loss) is detected.
 
 
 
-![derivation without margin](/images/TL.PNG "TL.PNG")
+![derivation without margin](../images/TL.PNG "TL.PNG")
 
 
 
@@ -110,7 +110,7 @@ A practical intuition of what triplet loss do in face recognition is, if we appl
 
 
 
-![2-persons-embeddings.png](/images/2-persons-embeddings.png "2-persons-embeddings.png")
+![2-persons-embeddings.png](../images/2-persons-embeddings.png "2-persons-embeddings.png")
 
 
 
@@ -124,7 +124,7 @@ Triplets variations means that there are more than one type of triplets that you
 
 according to our rule:
 
-![TL](/images/TL.PNG "TL.PNG")
+![TL](../images/TL.PNG "TL.PNG")
 
 
 
@@ -134,15 +134,15 @@ we have three kind of triplets that we can generate :
 
 \- ***Easy Triplets*** these triplets results in zero loss because they are already satisfying the loss function i.e., the negative example has bigger distance than the positive example plus the margin
 
-​												![easy-triplets](/images/easy-triplets.PNG "easy-triplets")
+​												![easy-triplets](../images/easy-triplets.PNG "easy-triplets")
 
 \- ***Semi-Hard Triplets*** the negative example is not closer to the anchor more than the positive, but the negative example has smaller distance than the positive example plus the margin
 
-​												![semi-hard-triplets.PNG](/images/semi-hard-triplets.PNG "semi-hard triplets.PNG")
+​												![semi-hard-triplets.PNG](../images/semi-hard-triplets.PNG "semi-hard triplets.PNG")
 
 \- ***Hard Triplets*** The nearest negative example and the farthest positive example to the anchor are chosen
 
-​											![hard-triplets.PNG](/images/hard-triplets.PNG "hard triplets.PNG")
+​											![hard-triplets.PNG](../images/hard-triplets.PNG "hard triplets.PNG")
 
 # 3- Triplets mining techniques
 
@@ -164,7 +164,7 @@ First we create list of triplets (a,p,n), whatever the type of triplets we need 
 
 
 
-![offline-mining](/images/offline-mining.png "offline-mining")
+![offline-mining](../images/offline-mining.png "offline-mining")
 
 
 
@@ -191,7 +191,7 @@ The idea of Online mining is to overcome the computation and memory drawback of 
 
 
 
-![online-mining](/images/online-mining.png "online-mining")
+![online-mining](../images/online-mining.png "online-mining")
 
 
 
@@ -245,7 +245,7 @@ In [Person Re-Identification by Multi-Channel Parts-Based CNN with Improved Trip
 
 For this reason a new margin **m2** which is much smaller than the first margin **m1** is used to pull the instances  of the same class more closer. The new triplet loss equation would be:
 
-![improved-TL](/images/improved-TL.PNG "improved-TL")
+![improved-TL](../images/improved-TL.PNG "improved-TL")
 
 
 **Note:** The previous equation is from [here](https://openaccess.thecvf.com/content_cvpr_2016/papers/Cheng_Person_Re-Identification_by_CVPR_2016_paper.pdf), and it is modified to match the blog notations.
@@ -283,13 +283,13 @@ embedding_network = tf.keras.Sequential([
 
 Two principal components of these embedding vectors are then visualized before and after training.
 
-![before-after](/images/before-after.png "before-after")
+![before-after](../images/before-after.png "before-after")
 
 Also the embeddings are plotted before each epoch to monitor how the triplet-loss affects the embeddings of the same class to be pulled towards each other, and the dissimilar classes to be pushed away from each other.
 
 
 
-![Embeddings_over_training.gif](/images/Embeddings_over_training.gif "Embeddings_over_training.gif")
+![Embeddings_over_training.gif](../images/Embeddings_over_training.gif "Embeddings_over_training.gif")
 
 
 
