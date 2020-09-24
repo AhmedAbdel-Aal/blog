@@ -195,7 +195,7 @@ The idea of Online mining is to overcome the computation and memory drawbacks of
 
 
 
-First, we pass a 3N batch of input data through the embedding network to calculate 3N embedding vectors. Secondly, we create a pair-wise distance matrix for all the embedding vectors. Third, for each vector we chose a positive and negative examples to calculate the loss. Finally, we accumulate the loss from all the triplets to be out batch loss. 
+First, we pass a 3N batch of input data through the embedding network to calculate 3N embedding vectors. Secondly, we create a pair-wise distance matrix for all the embedding vectors. Third, for each vector we chose a positive and negative examples to calculate the loss. Finally, we accumulate the loss from all the triplets to be our batch loss. 
 
 
 
