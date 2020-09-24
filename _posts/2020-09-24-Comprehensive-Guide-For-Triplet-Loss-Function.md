@@ -4,7 +4,6 @@ title: Comprehensive Guide For Triplet Loss Function
 published: true
 ---
 
-# Comprehensive Guide For Triplet Loss Function
 
 In this blog, a full guide for the triplet loss function that gained special attention lately for its importance in face recognition and verification tasks. The blog discuss the triplets variations and different mining techniques. Then, some advanced notes about the soft margin from [1](https://arxiv.org/pdf/1703.07737.pdf), and Improved triplet loss from [2](https://openaccess.thecvf.com/content_cvpr_2016/papers/Cheng_Person_Re-Identification_by_CVPR_2016_paper.pdf). Finally, the visualization of trained embeddings from the GitHub Gist [Mnist Embeddings Visualization using Semi-Hard Triplet Loss](https://gist.github.com/AhmedAbdel-Aal/794d6f9c004bd07762975db580734a44). 
 
