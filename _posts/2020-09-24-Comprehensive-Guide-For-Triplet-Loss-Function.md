@@ -43,7 +43,7 @@ First of all, let's create a model that takes an image as inputs and output an e
 
 
 
-![Embedding network](/images/s.png "Embedding network")
+![Embedding network](../images/s.png "Embedding network")
 
 
 Then let's create two instances of that model, and pass the two corresponding embeddings into a similarity function. If the two images are of the ***same person***, then they should have ***high similarity***, and ***low similarity*** if the two images are of ***different persons***. Now, we can define that the loss is the complement of the similarity.
