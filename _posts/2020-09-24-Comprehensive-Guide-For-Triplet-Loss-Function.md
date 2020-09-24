@@ -29,7 +29,7 @@ In this blog, a full guide for the triplet loss function that gained special att
 
 
 
-Triplet loss is always accompanied with face recognition, verification tasks. Triplet loss allows the option of dealing with variable number of classes, as in face recognition. Face recognition is the question of "who is this person from all the persons in the data-set we have". Triplet loss also raised with Siamese networks architecture.
+Triplet loss is always accompanied with face recognition, verification tasks. Triplet loss allows the option of training networks with variable number of classes, as in face recognition. Face recognition is the question of "who is this person from all the persons in the data-set we have". Triplet loss also raised with Siamese networks architecture.
 
 
 
@@ -118,7 +118,7 @@ A practical intuition of what triplet loss do in face recognition is, if we appl
 
 # 2- Triplets variation
 
-Triplets variations means that there are more than one type of triplets that you can collect from your data. First of all, we have a base rule that defines that triplets as anchor, positive example and negative example. The variations comes when which exactly positive examples from all the positives that you can choose at each time, and which exactly the negative example that you can choose from all the negative examples that you have. 
+Triplets variations means that there are more than one type of triplets that you can collect from your data. First of all, we have a base rule that defines that triplets as anchor, positive example and negative example. The variations comes from which exactly the positive examples from all the positives that you will choose, and which exactly the negative example that you can choose from all the negative examples that you have. 
 
 
 
@@ -160,7 +160,7 @@ You can assume that Offline mining approach is like a Siamese network with three
 
 
 
-First we create list of triplets (a,p,n), whatever the type of triplets we need to generate, then we divide them into N batches. For each batch, we pass triplets one after the other, resulting in their corresponding embeddings. So we make N passes for one epoch.
+First we create list of triplets (a,p,n), whatever the type of triplets we need to generate, then we divide them into N batches. For each batch, we pass triplets one after the other, resulting in their corresponding embeddings. So we make `N * batch_size` passes for one epoch.
 
 
 
@@ -174,7 +174,7 @@ One point can be added here, is that we can update the distribution of the tripl
 
 The drawbacks of this approach are : 
 
-+ you need to make a full pass on the data-set before the training.
++ you need to make a full pass on the data-set before the training to generate the triplets.
 
 + you may need to update the mined batches after each epochs.
 
@@ -187,7 +187,7 @@ The drawbacks of this approach are :
 
 ## Online mining
 
-The idea of Online mining is to overcome the computation and memory drawback of the offline mining. Thus the triplets mining is applied over the embeddings of the data, not the data itself. Therefore the architecture of the model is changed into:
+The idea of Online mining is to overcome the computation and memory drawbacks of the offline mining. Thus the triplets mining is applied over the embeddings of the data, not the data itself. Therefore the architecture of the model is changed into:
 
 
 
@@ -233,7 +233,7 @@ The reason for the soft margin naming came from [In Defense of the Triplet Loss 
 
 >  The softplus function has similar behavior to the hinge, but it decays exponentially instead of having a hard cut-off, we hence refer to it as the soft-margin formulation.
 
-
+![image](https://www.researchgate.net/profile/Hussam_Lawen/publication/336602359/figure/fig2/AS:814832592908288@1571282637278/The-Softplus-function-ln1-exp-compared-to-max0_W640.jpg)
 
 #### Improved triplet loss: 
 
@@ -310,4 +310,6 @@ Also the embeddings are plotted before each epoch to monitor how the triplet-los
 5- [FaceNet: A Unified Embedding for Face Recognition and Clustering](https://arxiv.org/pdf/1503.03832.pdf)
 
 6- [tensorflow addons Semi-Hard Triplet loss](https://www.tensorflow.org/addons/api_docs/python/tfa/losses/TripletSemiHardLoss)
+
+7- [Attention Network Robustification for Person ReID](https://www.researchgate.net/publication/336602359_Attention_Network_Robustification_for_Person_ReID)
 
